@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema</title>
+
+</head>
+
+    <script>
+
+        function calculateReceived(payments) {
+            let total = 0
+            for (payment of payments) {
+                total = total + payment.value
+            }
+            return total
+        }
+
+        function calculatePayment(membersQuantity, monthlyPayment) {
+            return membersQuantity * monthlyPayment
+        }
+
+        // mensalidade
+        const monthlyPayment = 50
+
+        // associados
+        const members = ["Patrik", "Kamilla", "Karel"] // array
+
+        // Janeiro
+        const januaryPayments = [{member: "Patrik", value : 50}, {member: "Kamilla", value : 50}, {member: "Karel", value : 0}]
+
+        const totalPayment1 = calculatePayment(members.length, monthlyPayment)
+        const totalReceived1 = calculateReceived(januaryPayments)
+        console.log("Janeiro")
+        console.log("Total a receber: ", totalPayment1)
+        console.log("Total recebido: ", totalReceived1)
+
+        // Fevereiro
+        const februaryPayments = [{member: "Patrik", value : 50}, {member: "Kamilla", value : 50}, {member: "Karel", value : 50}]
+
+        const totalPayment2 = calculatePayment(members.length, monthlyPayment)
+        const totalReceived2 = calculateReceived(februaryPayments)
+        console.log("Fevereiro")
+        console.log("Total a receber: ", totalPayment2)
+        console.log("Total recebido: ", totalReceived2)
+
+        // Março
+        members.push("Veronika")
+
+        const marchPayments = [{member: "Patrik", value : 50}, {member: "Kamilla", value : 50}, {member: "Karel", value : 50}, {member: "Veronika", value : 50}]
+
+        const totalPayment3 = calculatePayment(members.length, monthlyPayment)
+        const totalReceived3 = calculateReceived(marchPayments)
+        console.log("Março")
+        console.log("Total a receber: ", totalPayment3)
+        console.log("Total recebido: ", totalReceived3)
+
+    </script>
+</html>
